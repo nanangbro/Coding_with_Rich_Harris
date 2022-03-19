@@ -1,19 +1,12 @@
 <script>
+	import Button from "./Button.svelte"
 	export let name;
-
-	let count = 0;
-	
-	const increment = () => {
-		count += 1;
-	};
 </script>
 
 <main>
 	<h1>Hi {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<button on:click={increment}>
-		count: {count}
-	</button>
+	<Button />
 </main>
 
 <style>
