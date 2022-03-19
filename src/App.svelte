@@ -1,28 +1,22 @@
 <script>
-	import { onDestroy } from "svelte";
-	import { count } from "./store.js"
 	import Button from "./Button.svelte"
 	export let name;
 
-	const unsubscribe = count.subscribe(value => {
-		console.log(value)
-	})
+	let count = 0;
     
 	const increment = () => {
-		count.update(n => n + 1);
+		count += 2;
 	};
-
-	onDestroy(() => unsubscribe())
 </script>
 
 <main>
-	<h1>Hi {name}! {$count}</h1>
+	<h1>Hi {name}! {count}</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<form>
 		<input type="text" bind:value={name} />
 	</form>
-	<Button count={$count} handleClick={increment} />
-	<!-- <Button count={0} /> -->
+	<Button {count} handleClick={increment} />
+	<Button count={0} />
 </main>
 
 <style>
