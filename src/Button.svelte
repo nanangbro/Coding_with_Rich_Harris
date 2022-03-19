@@ -1,13 +1,15 @@
 <script>
     export let count;
     
-	export let increment;
+	export let handleClick = () => {
+        count += 1;
+    };
 </script>
 
 <style>
 
 </style>
 
-<button on:click={increment}>
+<button on:click={handleClick}>
     count: {count}
 </button>
