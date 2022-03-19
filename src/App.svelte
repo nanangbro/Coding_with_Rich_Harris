@@ -1,12 +1,15 @@
 <script>
 	import Button from "./Button.svelte"
 	export let name;
+
+	let count;
 </script>
 
 <main>
 	<h1>Hi {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Button />
+	<Button {count} />
+	<Button count={0} />
 </main>
 
 <style>
