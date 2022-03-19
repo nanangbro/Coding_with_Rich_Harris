@@ -1,4 +1,5 @@
 <script>
+	import Resetter from "./Resetter.svelte"
 	import { count } from "./store.js"
 	import Button from "./Button.svelte"
 	export let name;
@@ -16,6 +17,7 @@
 		<input type="text" bind:value={name} />
 	</form>
 	<Button count={$count} handleClick={increment} />
+	<Resetter />
 	<!-- <Button count={0} /> -->
 </main>
 
