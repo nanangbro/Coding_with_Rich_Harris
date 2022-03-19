@@ -2,14 +2,18 @@
 	import Button from "./Button.svelte"
 	export let name;
 
-	let count;
+	let count = 0;
+    
+	const increment = () => {
+		count += 1;
+	};
 </script>
 
 <main>
 	<h1>Hi {name}! {count}</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Button bind:count />
-	<Button count={0} />
+	<Button {count} {increment} />
+	<!-- <Button count={0} /> -->
 </main>
 
 <style>

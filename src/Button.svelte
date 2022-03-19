@@ -1,9 +1,7 @@
 <script>
-    export let count = 42;
+    export let count;
     
-	const increment = () => {
-		count += 1;
-	};
+	export let increment;
 </script>
 
 <style>
