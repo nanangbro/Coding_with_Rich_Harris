@@ -1,22 +1,22 @@
 <script>
+	import { count } from "./store.js"
 	import Button from "./Button.svelte"
 	export let name;
-
-	let count = 0;
     
 	const increment = () => {
-		count += 2;
+		$count +=1;
 	};
+
 </script>
 
 <main>
-	<h1>Hi {name}! {count}</h1>
+	<h1>Hi {name}! {$count}</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<form>
 		<input type="text" bind:value={name} />
 	</form>
-	<Button {count} handleClick={increment} />
-	<Button count={0} />
+	<Button count={$count} handleClick={increment} />
+	<!-- <Button count={0} /> -->
 </main>
 
 <style>
